@@ -31,8 +31,8 @@ public class ChocolateFeast {
                 totalChoc++;
             } else if(tempChoc / M >= 1) {
                 do {
-                    wrappers = tempChoc / M; // 2
-                    totalChoc += wrappers; // 1959
+                    wrappers = tempChoc / M;
+                    totalChoc += wrappers;
                     tempChoc = (tempChoc % M) + (tempChoc / M);
                 } while (tempChoc >= M);
             }

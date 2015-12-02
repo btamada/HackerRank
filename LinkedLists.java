@@ -29,18 +29,33 @@ public class LinkedLists {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Node head = new Node();
-        Node n1 = new Node(1);
-        Node n2 = new Node(2);
-        Node n3 = new Node(3);
-        Node n4 = new Node(4);
-        Node n5 = new Node(5);
+        Node head1 = new Node();
+        Node nA1 = new Node(2);
+        Node nA2 = new Node(4);
+        Node nA3 = new Node(6);
+        Node nA4 = new Node(8);
+        Node nA5 = new Node(10);
 
-        head.next = n1;
-        n1.next = n2;
-        n2.next = n3;
-        n3.next = n4;
-        n4.next = n5;
+        head1.next = nA1;
+        nA1.next = nA2;
+        nA2.next = nA3;
+        nA3.next = nA4;
+        nA4.next = nA5;
+
+        Node head2 = new Node();
+        Node nB1 = new Node(1);
+        Node nB2 = new Node(3);
+        Node nB3 = new Node(5);
+        Node nB4 = new Node(7);
+        Node nB5 = new Node(9);
+
+        head2.next = nB1;
+        nB1.next = nB2;
+        nB2.next = nB3;
+        nB3.next = nB4;
+        nB4.next = nB5;
+
+        print(mergeLists(head1,head2));
 
         //print(head);
         //reverse(head);
@@ -48,6 +63,25 @@ public class LinkedLists {
         //print(newHead(head,6));
         //print(newTail(head,6));
         //print(insertNode(head,-1));
+    }
+
+    static Node mergeLists(Node head1, Node head2) {
+        if(head1 == null) return head2;
+        if(head2 == null) return head1;
+
+        Node returnNode = null;
+
+        if(head1.data <= head2.data) {
+            returnNode = head1;
+            returnNode.next = mergeLists(head1.next,head2);
+        } else {
+            returnNode = head2;
+            returnNode.next = mergeLists(head1, head2.next);
+        }
+
+        return returnNode;
+
+
     }
 
     static Node circList(Node head) {

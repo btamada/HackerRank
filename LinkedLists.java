@@ -55,8 +55,7 @@ public class LinkedLists {
         nB3.next = nB4;
         nB4.next = nB5;
 
-        print(mergeLists(head1,head2));
-
+        //print(mergeLists(head1,head2));
         //print(head);
         //reverse(head);
         //findVal(head,3);
@@ -80,8 +79,6 @@ public class LinkedLists {
         }
 
         return returnNode;
-
-
     }
 
     static Node circList(Node head) {

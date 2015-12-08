@@ -39,44 +39,34 @@ public class Java1DArray {
                 numArray[i] = sc.nextInt();
             }
 
-            // starting position
             currentPositions.add(0);
 
             while (currentPositions.size() > 0) {
-                //System.out.println("Current Positions Size: " + currentPositions.size());
                 newPositions.clear();
                 win = false;
-                //System.out.println("Before Foreach Loop");
-                //System.out.println("Current Position Head Value: " + currentPositions.peek());
-                for (int v : currentPositions) { // 3-1-NULL
-                    //System.out.println("In Foreach Loop");
+                for (int v : currentPositions) {
                     if (v + m >= numArray.length || v + 1 >= numArray.length) {
                         win = true;
-                        //System.out.println("Surpassed or equal array length: " + win);
                         break;
                     }
 
                     if (numArray[v + m] == 0 && pastPositions.indexOf(v + m) < 0) {
                         newPositions.add(v + m);
-                        //System.out.println("Added new jump position: " + (v+m) ) ;
                         if (v + m > n - 1) {
                             win = true;
-                            //System.out.println("Jump surpassed or equal array length: " + win);
                             break;
                         }
                     }
 
                     if (v != 0 && numArray[v - 1] == 0 && pastPositions.indexOf(v - 1) < 0) {
                         newPositions.add(v - 1);
-                        //System.out.println("Added new back position: " + (v-1));
                     }
 
                     if (numArray[v + 1] == 0 && pastPositions.indexOf(v + 1) < 0) {
                         newPositions.add(v + 1);
-                        //System.out.println("Added forward new position: " + (v + 1));
                         if (v + 1 > n - 1) {
                             win = true;
-                            //System.out.println("Forward surpassed or equal array length: " + win);
+                            
                             break;
                         }
                     }
@@ -86,19 +76,9 @@ public class Java1DArray {
 
                 pastPositions.addAll(currentPositions);
 
-                for (int pp : pastPositions) {
-                    //System.out.println("Past Position: " + pp);
-                }
-
                 currentPositions.clear();
 
                 currentPositions.addAll(newPositions);
-
-                for (int cp : currentPositions) {
-                    //System.out.println("Current Position: " + cp);
-                }
-
-
             }
 
             if (win == true) {

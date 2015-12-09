@@ -13,7 +13,6 @@ public class MaxSubArray {
             if(arr[i] == subarr[counter]) {
                 while(counter < subarr.length && i < arr.length) {
                     if(arr[i] == subarr[counter]) {
-                        //System.out.println("Arr val is: " + arr[i]);
                         i++;
                         sum += subarr[counter];
                         counter++;

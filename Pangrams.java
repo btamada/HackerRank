@@ -15,9 +15,7 @@ public class Pangrams {
         char[] strCharArr = input.toLowerCase().toCharArray();
 
         for(int i = 0; i < strCharArr.length; ++i) {
-            if(alphabet[strCharArr[i] - 'a'] == false) {
-                alphabet[strCharArr[i] - 'a'] = true;
-            }
+            alphabet[strCharArr[i] - 'a'] = true;
         }
 
         for(int j = 0; j < alphabet.length; ++j) {

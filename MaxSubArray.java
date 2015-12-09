@@ -25,7 +25,7 @@ public class MaxSubArray {
         }
 
         System.out.println("The max sum is: " + sum);
-        System.out.println("Counter of integers: " + counter);
+        System.out.println("Count of integers summed: " + counter);
     }
 
 }

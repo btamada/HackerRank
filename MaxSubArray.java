@@ -13,7 +13,6 @@ public class MaxSubArray {
             if(arr[i] == subarr[counter]) {
                 while(counter < subarr.length && i < arr.length) {
                     if(arr[i] == subarr[counter]) {
-                        //System.out.println("Arr val is: " + arr[i]);
                         i++;
                         sum += subarr[counter];
                         counter++;
@@ -26,7 +25,7 @@ public class MaxSubArray {
         }
 
         System.out.println("The max sum is: " + sum);
-        System.out.println("Counter of integers: " + counter);
+        System.out.println("Count of integers summed: " + counter);
     }
 
 }

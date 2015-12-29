@@ -7,7 +7,7 @@ public class Pangrams {
 
     public static void main(String[] args) {
         boolean[] alphabet = new boolean[26];
-        String result = "pangram";
+        String result = "";
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         input = input.replaceAll("\\s","");
@@ -23,6 +23,7 @@ public class Pangrams {
                 result = "not pangram";
                 break;
             }
+            else result = "pangram";
         }
 
         System.out.println(result);

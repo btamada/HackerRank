@@ -77,7 +77,6 @@ public class LinkedLists {
             returnNode = head2;
             returnNode.next = mergeLists(head1, head2.next);
         }
-
         return returnNode;
     }
 
